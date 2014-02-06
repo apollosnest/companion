@@ -1,7 +1,8 @@
 <?php  
- require_once('class.name.php');
+require_once('class.object.php');
+require_once('class.name.php');
   
-class User  
+class User extends Object
 {
     public $ID;
 	public $Name;
@@ -15,13 +16,6 @@ class User
 		$this->Username = $username;
 		$this->Name = new Name($forename, $surname);
 		$this->role = $role;
-	}
-	
-	
-	// TODO: remove, debug function
-	public function quick_dump()
-	{
-		var_dump($this);	
 	}
 }  
   

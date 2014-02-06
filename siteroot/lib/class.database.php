@@ -1,17 +1,34 @@
 <?php  
   
 class Database  
-{  
-    private $user;
-    private $pass;
-    private $host;
+{
+	protected $link;
+    private $user = 'perry';
+    private $pass = '@pollo';
+    private $host = 'localhost';
+	private $dbid = 'tournaments';
+	private $connected = false;
   
     public function __construct()
     {  
-        //mysql_connect
-    }  
+		if(!$this->connect()) trigger_error("Couldn't connect to database");
+    }
+	
+	public function connect()
+	{
+		if($this->connected)
+			return true;
+		$this->link = mysql_connect('localhost', 'perry', '@pollo');
+		$this->connected = ($this->link != NULL);
+		if(!$this->connected)
+			return false; // couldn't connect
+		return mysql_select_db($this->dbid); // true if success, false if cant select
+	}
+	
+	public function is_connected()
+	{
+		return $this->connected;
+	}
 }
-
-$DB = new Database;
   
 ?>  

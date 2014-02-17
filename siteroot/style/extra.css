@@ -1,0 +1,26 @@
+@-webkit-viewport   { width: device-width; }
+@-moz-viewport      { width: device-width; }
+@-ms-viewport       { width: device-width; }
+@-o-viewport        { width: device-width; }
+@viewport           { width: device-width; }
+
+html 
+{
+     overflow: -moz-scrollbars-vertical;
+     overflow: scroll;
+	 margin-left: 15px; margin-right: 15px;
+}
+
+body
+{
+   word-wrap: break-word;
+   padding-top: 80px;
+}
+
+
+
+.footer
+{
+	padding-top: 10px;
+	background-color: rgb(238, 238, 238);
+}

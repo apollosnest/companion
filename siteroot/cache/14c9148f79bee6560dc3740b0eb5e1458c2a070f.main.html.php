@@ -5,13 +5,13 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '14c9148f79bee6560dc3740b0eb5e1458c2a070f' => 
     array (
       0 => 'template\\main.html',
-      1 => 1391726825,
+      1 => 1391727445,
       2 => 'file',
     ),
   ),
   'nocache_hash' => '2429252f4103287f534-41682558',
   'version' => 'Smarty-3.1.16',
-  'unifunc' => 'content_52f411d6bb1081_49217460',
+  'unifunc' => 'content_52f41357ae81e2_20426557',
   'variables' => 
   array (
     'content' => 0,
@@ -19,7 +19,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'has_nocache_code' => false,
   'cache_lifetime' => 120,
 ),true); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_52f411d6bb1081_49217460')) {function content_52f411d6bb1081_49217460($_smarty_tpl) {?><!doctype html>
+<?php if ($_valid && !is_callable('content_52f41357ae81e2_20426557')) {function content_52f41357ae81e2_20426557($_smarty_tpl) {?><!doctype html>
 <html>
 <head>
 <meta charset="utf-8">
@@ -38,10 +38,10 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   </header>
   <div class="sidebar1">
     <ul class="nav">
-      <li><a href="#">Link one</a></li>
-      <li><a href="#">Link two</a></li>
-      <li><a href="#">Link three</a></li>
-      <li><a href="#">Link four</a></li>
+      <li><a href="#">Control Panel</a></li>
+      <li><a href="#">Tournaments</a></li>
+      <li><a href="#">News</a></li>
+      <li><a href="#">About</a></li>
     </ul>
     <aside>
       <p> The above links demonstrate a basic navigational structure using an unordered list styled with CSS. Use this as a starting point and modify the properties to produce your own unique look. If you require flyout menus, create your own using a Spry menu, a menu widget from Adobe's Exchange or a variety of other javascript or CSS solutions.</p>

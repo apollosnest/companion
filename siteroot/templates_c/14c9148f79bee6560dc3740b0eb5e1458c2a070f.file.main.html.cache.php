@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.16, created on 2014-02-06 22:51:02
+<?php /* Smarty version Smarty-3.1.16, created on 2014-02-06 22:57:27
          compiled from "template\main.html" */ ?>
 <?php /*%%SmartyHeaderCode:2429252f4103287f534-41682558%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '14c9148f79bee6560dc3740b0eb5e1458c2a070f' => 
     array (
       0 => 'template\\main.html',
-      1 => 1391726825,
+      1 => 1391727445,
       2 => 'file',
     ),
   ),
@@ -42,10 +42,10 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   </header>
   <div class="sidebar1">
     <ul class="nav">
-      <li><a href="#">Link one</a></li>
-      <li><a href="#">Link two</a></li>
-      <li><a href="#">Link three</a></li>
-      <li><a href="#">Link four</a></li>
+      <li><a href="#">Control Panel</a></li>
+      <li><a href="#">Tournaments</a></li>
+      <li><a href="#">News</a></li>
+      <li><a href="#">About</a></li>
     </ul>
     <aside>
       <p> The above links demonstrate a basic navigational structure using an unordered list styled with CSS. Use this as a starting point and modify the properties to produce your own unique look. If you require flyout menus, create your own using a Spry menu, a menu widget from Adobe's Exchange or a variety of other javascript or CSS solutions.</p>

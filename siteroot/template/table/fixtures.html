@@ -1,0 +1,27 @@
+<div class="col-md-12">
+  <h3>Upcoming Fixtures</h3>
+  <div class="table-responsive">
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th>Team</th>
+          <th>Opponent</th>
+          <th>Competition</th>
+          <th>Date/Time</th>
+          <th>Location</th>
+        </tr>
+      </thead>
+      {foreach from=$fixtures item=f}
+      <tbody>
+        <tr>
+          <td>{$f->Teams[0]}</td>
+          <td>{$f->Teams[1]}</td>
+          <td>Competition</td>
+          <td>{$f->Date->get_string()}</td>
+          <td>{$f->Location}</td>
+        </tr>
+      {/foreach}
+      </tbody>
+    </table>
+  </div>
+</div>

@@ -1,7 +1,7 @@
 <?php
 
 if ($_POST) {
-	if (preg_match("[^@\s]@[^@\s]+\.[^@\s]{2}", trim($_POST["email"]))) {
+	if (preg_match('/^[^@"\s]+@[^@"\s]+\.[^@"\s]{2,}$/', trim($_POST["email"]))) {
 		echo "good";
 	}
 	else {

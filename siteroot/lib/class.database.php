@@ -6,7 +6,7 @@ class Database
     private $user = 'perry';
     private $pass = '@pollo';
     private $host = 'localhost';
-	private $dbid = 'tournaments';
+	private $dbid = 'companion';
 	private $connected = false;
   
     public function __construct()
@@ -18,7 +18,7 @@ class Database
 	{
 		if($this->connected)
 			return true;
-		$this->link = mysql_connect('localhost', 'perry', '@pollo');
+		$this->link = mysql_connect($this->host, $this->user, $this->pass);
 		$this->connected = ($this->link != NULL);
 		if(!$this->connected)
 			return false; // couldn't connect

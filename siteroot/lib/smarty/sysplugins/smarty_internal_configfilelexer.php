@@ -160,7 +160,7 @@ class Smarty_Internal_Configfilelexer
 
 
     const START = 1;
-    function yy_r1_1($yy_subpatterns)
+    function yy_r1_4($yy_subpatterns)
     {
 
     $this->token = Smarty_Internal_Configfileparser::TPC_COMMENTSTART;
@@ -272,7 +272,7 @@ class Smarty_Internal_Configfilelexer
 
 
     const VALUE = 2;
-    function yy_r2_1($yy_subpatterns)
+    function yy_r2_4($yy_subpatterns)
     {
 
     return false;
@@ -393,7 +393,7 @@ class Smarty_Internal_Configfilelexer
 
 
     const NAKED_STRING_VALUE = 3;
-    function yy_r3_1($yy_subpatterns)
+    function yy_r3_4($yy_subpatterns)
     {
 
     $this->token = Smarty_Internal_Configfileparser::TPC_NAKED_STRING;
@@ -462,7 +462,7 @@ class Smarty_Internal_Configfilelexer
 
 
     const COMMENT = 4;
-    function yy_r4_1($yy_subpatterns)
+    function yy_r4_4($yy_subpatterns)
     {
 
     return false;
@@ -540,7 +540,7 @@ class Smarty_Internal_Configfilelexer
 
 
     const SECTION = 5;
-    function yy_r5_1($yy_subpatterns)
+    function yy_r5_4($yy_subpatterns)
     {
 
     $this->token = Smarty_Internal_Configfileparser::TPC_DOT;
@@ -612,7 +612,7 @@ class Smarty_Internal_Configfilelexer
 
 
     const TRIPPLE = 6;
-    function yy_r6_1($yy_subpatterns)
+    function yy_r6_4($yy_subpatterns)
     {
 
     $this->token = Smarty_Internal_Configfileparser::TPC_TRIPPLE_QUOTES_END;

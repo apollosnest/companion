@@ -4,14 +4,16 @@ require_once('class.teammember.php');
 class Team
 {
 	public $TeamID;
-	private $name;
-	private $members;
+	public $TeamName;
+	public $OwnerID;
+	public $SportID;
 	
-	public function __construct($id, $name, $members)
+	public function __construct($id, $name, $owner, $sport)
 	{
 		$this->TeamID = $id;
 		$this->TeamName = $name;
-		$this->members = $members;
+		$this->OwnerID = $owner;
+		$this->SportID = $sport;
 	}
 	
 	public function team_size()

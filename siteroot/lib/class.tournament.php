@@ -5,15 +5,17 @@ class Tournament extends Object
 {
 	public $TournamentId;
 	public $Name;
-	public $DateScheduled;
-	public $DateCreated;
+	public $SportID;
+	public $TypeID;
+	public $Stage;
 	
-	public function __construct($id, $name, $date_scheduled, $date_created)
+	public function __construct($id, $name, $sportid, $typeid, $stage)
 	{
 		$this->TournamentId = $id;
 		$this->Name = $name;
-		$this->DateScheduled = $date_scheduled;
-		$this->DateCreated = $date_created;
+		$this->SportID = $sportid;
+		$this->TypeID = $typeid;
+		$this->Stage = $stage;
 	}
 }
 ?>

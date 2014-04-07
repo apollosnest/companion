@@ -10,11 +10,11 @@ class User extends Object
 	// not going to store hash for security, just check it
 	private $role = 0;
 	
-	public function __construct($userid, $username, $forename, $surname, $role)
+	public function __construct($userid, $username, $role)
 	{
 		$this->ID = $userid;
 		$this->Username = $username;
-		$this->Name = new Name($forename, $surname);
+		//$this->Name = new Name($forename, $surname);
 		$this->role = $role;
 	}
 }  

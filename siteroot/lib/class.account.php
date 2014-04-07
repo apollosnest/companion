@@ -33,32 +33,18 @@ class Account extends Database
 	/** returns a user object from its id. (DB) **/
 	public function user_from_id($id)
 	{
-		$result = mysql_query("SELECT username, forename, surname, role FROM `user` WHERE userid = '$id'") or trigger_error(mysql_error());
+		$result = mysql_query("SELECT username, role FROM `user` WHERE userid = '$id'") or trigger_error(mysql_error());
 		if(mysql_num_rows($result) == 0) return false; // no user with that id
 		$row = mysql_fetch_assoc($result);
-		return new User($id, $row['username'], $row['forename'], $row['surname'], $row['role']);
+		return new User($id, $row['username'], $row['role']);
 	}
-	
-	/** debug function to create user table. **/
-	protected function create_table()
-	{
-		$sql = "CREATE TABLE IF NOT EXISTS `user` (
-			`userid` int(11) NOT NULL AUTO_INCREMENT COMMENT 'range large enough for userbase',
-			`username` varchar(32) NOT NULL,
-			`forename` varchar(32) DEFAULT NULL,
-			`surname` varchar(32) NOT NULL,
-			`password` char(60) NOT NULL COMMENT 'brcypt 60 char hash',
-			`role` tinyint(4) NOT NULL COMMENT 'could use enum instead',
-			PRIMARY KEY (`userid`)
-			) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='minimal user account information' AUTO_INCREMENT=2 ;";
-		$res = myqsql_query($sql, $this->link) or trigger_error(mysql_error());
-	}
-	
+
 	/** debug funciton to insert test rows into the user table. **/
-	protected function create_test_data()
+	public function create_test_data()
 	{
-		$sql = "INSERT INTO `user` (`userid`, `username`, `forename`, `surname`, `password`, `role`) VALUES
-			(1, 'perry', NULL, 'Perry', '$2y$11$Vr5dPT41hbTGitPRx6Q4XeJP0DM9SkFGipnR9dHXYYeKuQsv8ohu2', 1);";
+		$hash = '$2y$11$Vr5dPT41hbTGitPRx6Q4XeJP0DM9SkFGipnR9dHXYYeKuQsv8ohu2';
+		$sql = "INSERT INTO `user` (`userid`, `username`, `password`, `role`) VALUES
+			(1, 'perry', '$hash', 1);";
 		$res = mysql_query($sql, $this->link) or trigger_error(mysql_error());
 	}
 }

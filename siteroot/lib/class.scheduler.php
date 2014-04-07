@@ -15,7 +15,7 @@ class Scheduler extends Database
 	/** get a tournmanent object from its id. (DB) **/
 	public function tournament_from_id($tournamentid)
 	{
-		$sql = "SELECT tournamentname, tournamentdate, datecreated FROM `tournament` where tournamentid = '$tournamentid' LIMIT 1";
+		$sql = "SELECT tournamentName, sportID, typeID, stage FROM `tournament` where tournamentID = '$tournamentid' LIMIT 1";
 		$res = mysql_query($sql, $this->link) or trigger_error(mysql_error());
 		if(mysql_num_rows($res) == 1)
 		{
@@ -28,6 +28,12 @@ class Scheduler extends Database
 			return $tournament;
 		}
 		else return NULL;
+	}
+	
+	public function fixtures_for_tournament($tournamentid)
+	{
+		$sql = "SELECT teamname FROM ";
+		return NULL;	
 	}
 	
 	/** debug function to create tournament table. **/

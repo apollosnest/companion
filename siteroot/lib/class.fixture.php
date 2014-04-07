@@ -4,9 +4,9 @@ require_once('class.date.php');
 class Fixture
 {
 	public $FixtureID;
-	public $Teams = array();
-	public $Date;
+	public $TournamentID;
 	public $Location;
+	public $Date;
 	
 	public function __construct($id, array $teams, Date $date, $location)
 	{

@@ -8,10 +8,10 @@ class Fixture
 	public $Location;
 	public $Date;
 	
-	public function __construct($id, array $teams, Date $date, $location)
+	public function __construct($fixtureid, $tournamentid, Date $date, $location)
 	{
 		$this->FixtureID = $id;
-		$this->Teams = $teams;
+		$this->TournamentID = $tournamentid;
 		$this->Date = $date;
 		$this->Location = $location;
 	}

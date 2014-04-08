@@ -1,13 +1,14 @@
 <?php
 require_once('class.database.php');
 require_once('class.tournament.php');
+require_once('class.fixture.php');
 class Scheduler extends Database
 {
 	
 	/** create a tournament with the given name. (DB) **/
-	public function create_tournament($name)
+	public function create_tournament($name, $sport, $type)
 	{
-		$sql = "INSERT INTO `tournament` (tournamentname, datecreated) VALUES ('$name', NOW())";
+		$sql = "INSERT INTO `tournament` (tournamentName, sportID, typeID, stage) VALUES ('$name', '$sport', '$type', '0')"; // NOW()
 		$res = mysql_query($sql, $this->link) or trigger_error(mysql_error());
 		return ($res != NULL);
 	}
@@ -32,8 +33,17 @@ class Scheduler extends Database
 	
 	public function fixtures_for_tournament($tournamentid)
 	{
-		$sql = "SELECT teamname FROM ";
-		return NULL;	
+		$sql = "SELECT fixtureID, teamID FROM tournamentfixture WHERE tournamentID = '{$tournamentid}'";
+		$res = mysql_query($sql, $this->link) or trigger_error(mysql_error());
+		
+		$fixtures = array();
+		while($row = mysql_fetch_assoc($res))
+		{
+			$f = new Fixture();
+			array_push($fixtures, $f);	
+		}
+		
+		return NULL;
 	}
 	
 	/** debug function to create tournament table. **/

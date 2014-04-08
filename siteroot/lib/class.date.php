@@ -22,9 +22,5 @@ class Date
 			return $this->get_string_formatted('H:i M jS');
 		else return "TBA";
 	}
-	public function get_datetime()
-	{
-		return date("Y-m-d H:i:s", $this->datetime);	
-	}
 }
 ?>

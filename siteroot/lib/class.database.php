@@ -6,7 +6,7 @@ class Database
     private $user = 'perry';
     private $pass = '@pollo';
     private $host = 'localhost';
-	private $dbid = 'companion';
+	private $dbid = 'companion2';
 	private $connected = false;
   
     public function __construct()

@@ -2,6 +2,7 @@
 require_once('class.database.php');
 require_once('class.tournament.php');
 require_once('class.fixture.php');
+require_once('class.date.php');
 class Scheduler extends Database
 {
 	
@@ -33,17 +34,32 @@ class Scheduler extends Database
 	
 	public function fixtures_for_tournament($tournamentid)
 	{
-		$sql = "SELECT fixtureID, teamID FROM tournamentfixture WHERE tournamentID = '{$tournamentid}'";
+		$sql = "SELECT tournamentfixture.fixtureID, teamID, date, location FROM tournamentfixture LEFT JOIN fixture 
+		ON tournamentfixture.fixtureID = fixture.fixtureID
+		AND tournamentfixture.tournamentID = '{$tournamentid}'";
 		$res = mysql_query($sql, $this->link) or trigger_error(mysql_error());
 		
 		$fixtures = array();
 		while($row = mysql_fetch_assoc($res))
 		{
-			$f = new Fixture();
-			array_push($fixtures, $f);	
+			$fid = $row['fixtureID'];
+			if(!array_key_exists($fid, $fixtures))
+			{
+				$f = new Fixture($fid, $tournamentid, new Date($row['date']), $row['location']);
+				$fixtures[$fid]= $f;
+			}
+			$fixtures[$fid]->add_team($row['teamID']);
 		}
 		
-		return NULL;
+		return $fixtures;
+	}
+	
+		/** create a tournament with the given name. (DB) **/
+	public function create_fixture($date, $location)
+	{
+		$sql = "INSERT INTO `tournament` (tournamentName, sportID, typeID, stage) VALUES ('$name', '$sport', '$type', '0')"; // NOW()
+		$res = mysql_query($sql, $this->link) or trigger_error(mysql_error());
+		return ($res != NULL);
 	}
 	
 	/** debug function to create tournament table. **/

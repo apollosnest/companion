@@ -1,0 +1,154 @@
+
+@-webkit-viewport   { width: device-width; }
+@-moz-viewport      { width: device-width; }
+@-ms-viewport       { width: device-width; }
+@-o-viewport        { width: device-width; }
+@viewport           { width: device-width; }
+
+body
+{
+word-wrap: break-word;
+ 
+   padding-top: 50px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Raleway', sans-serif;
+}
+p, div {
+    font-family: 'Raleway', sans-serif;
+}
+
+
+
+
+html {
+     overflow: -moz-scrollbars-vertical;
+     overflow: scroll;
+}
+.scroll-adjust{
+	padding-top:50px;
+	
+	margin-top:-50px;
+}
+
+.no-b-pad
+{
+	
+}
+
+hr.blue
+{
+	 border-top: 1px solid #3641A3;
+}
+
+.blue-b
+{
+	background-color: #3641A3;
+}
+
+.yellow-b
+{
+	background-color: #FFED9C;
+}
+
+.white-t
+{
+	color: #FFFFFF;
+}
+
+.blue-t
+{
+	color: #3641A3;
+}
+.white-b
+{
+	background-color: #FFFFFF;
+}
+
+.row .sec
+{
+	padding-top:10px;
+}
+
+.dead-cent
+{
+	position:absolute;
+	width:100%;
+	left:0px;
+	top:25%;
+}
+
+.btn-inv {
+  color: #3641A3;
+  background-color: #fff;
+  border-color: #fff;
+}
+.btn-inv:hover,
+.btn-inv:focus,
+.btn-inv:active,
+.btn-inv.active,
+.open .dropdown-toggle.btn-inv {
+  color: #fff;
+  background-color: #3641A3;
+  border-color: #fff;
+}
+.btn-inv:active,
+.btn-inv.active,
+.open .dropdown-toggle.btn-inv {
+  background-image: none;
+}
+.btn-inv.disabled,
+.btn-inv[disabled],
+fieldset[disabled] .btn-inv,
+.btn-inv.disabled:hover,
+.btn-inv[disabled]:hover,
+fieldset[disabled] .btn-inv:hover,
+.btn-inv.disabled:focus,
+.btn-inv[disabled]:focus,
+fieldset[disabled] .btn-inv:focus,
+.btn-inv.disabled:active,
+.btn-inv[disabled]:active,
+fieldset[disabled] .btn-inv:active,
+.btn-inv.disabled.active,
+.btn-inv[disabled].active,
+fieldset[disabled] .btn-inv.active {
+  background-color: #3641D3;
+  border-color: #3641D3;
+}
+.btn-inv .badge {
+  color: #fff;
+  background-color: #333;
+}
+
+a.white-t {
+  color: #fff;
+  text-decoration: underline;
+}
+a:hover.white-t,
+a:focus.white-t {
+  color: #fff;
+  text-decoration: underline;
+}
+.white-t > a {
+  color: #fff;
+  text-decoration: underline;
+}
+.white-t > a:hover, a:focus
+{
+  color: #fff;
+  text-decoration: underline;
+}
+
+a.blue-t {
+  color: #fff;
+  text-decoration: underline;
+}
+a:hover.blue-t,
+a:focus.blue-t {
+  color: #fff;
+  text-decoration: underline;
+}
+
+
+

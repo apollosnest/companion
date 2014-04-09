@@ -16,6 +16,37 @@ class Teams extends Database
 		else return NULL;
 	}
 	
+	
+	/** return all teams user is a member of **/
+	public function teams_for_user($userid)
+	{
+		$sql = "SELECT teamroster.teamID, team.teamName, team.ownerID, team.sportID
+				FROM team
+				INNER JOIN teamroster ON team.teamID = teamroster.teamID
+				AND teamroster.userID = '$userid'";
+		$res = mysql_query($sql, $this->link) or trigger_error(mysql_error());
+		$teams = array();
+		while($row = mysql_fetch_assoc($res))
+		{
+			array_push($teams, new Team($row['teamID'], $row['teamName'], $row['ownerID'], $row['sportID']));
+		}
+		return $teams;
+	}
+	
+	public function teams_owned_by_user($userid)
+	{
+		$sql = "SELECT team.teamID, team.teamName, team.ownerID, team.sportID
+				FROM team
+				WHERE team.ownerID = '$userid'";
+		$res = mysql_query($sql, $this->link) or trigger_error(mysql_error());
+		$teams = array();
+		while($row = mysql_fetch_assoc($res))
+		{
+			array_push($teams, new Team($row['teamID'], $row['teamName'], $row['ownerID'], $row['sportID']));
+		}
+		return $teams;
+	}
+	
 	/** create a team, initially with 0 members. **/
 	public function create_team($name, $owner, $sport)
 	{

@@ -1,5 +1,5 @@
 <?php
-require("core.php");
+require_once("core.php");
 // account testing
 $acc = new Account;
 //if($acc->authenticate('perry', '@pollo')) echo "success"; else echo "failure";

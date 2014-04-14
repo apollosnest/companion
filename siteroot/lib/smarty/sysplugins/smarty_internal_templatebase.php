@@ -124,7 +124,7 @@ abstract class Smarty_Internal_TemplateBase extends Smarty_Internal_Data
             } else {
                 $parent_resource = '';
             }
-            throw new SmartyException(getcwd()."Unable to load template {$_template->source->type} '{$_template->source->name}'{$parent_resource}");
+            throw new SmartyException("Unable to load template {$_template->source->type} '{$_template->source->name}'{$parent_resource}");
         }
         // read from cache or render
         if (!($_template->caching == Smarty::CACHING_LIFETIME_CURRENT || $_template->caching == Smarty::CACHING_LIFETIME_SAVED) || !$_template->cached->valid) {
@@ -343,7 +343,7 @@ abstract class Smarty_Internal_TemplateBase extends Smarty_Internal_Data
             }
             // debug output
             if ($this->smarty->debugging) {
-                Smarty_Internal_Debug::display_debug($this);
+                Smarty_Internal_Debug::display_debug($_template);
             }
             if ($merge_tpl_vars) {
                 // restore local variables

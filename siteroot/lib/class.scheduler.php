@@ -24,9 +24,10 @@ class Scheduler extends Database
 			$row = mysql_fetch_assoc($res);
 			$tournament = new Tournament(
 				$tournamentid, 
-				$row['tournamentname'], 
-				new Date($row['tournamentdate']),
-				new Date($row['datecreated']));
+				$row['tournamentName'], 
+				$row['sportID'],
+				$row['typeID'],
+				$row['stage']);
 			return $tournament;
 		}
 		else return NULL;

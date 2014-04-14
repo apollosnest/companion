@@ -182,7 +182,7 @@ class Smarty_Internal_Utility
      */
     public static function clearCompiledTemplate($resource_name, $compile_id, $exp_time, Smarty $smarty)
     {
-        $_compile_dir = $smarty->getCompileDir();
+        $_compile_dir = realpath($smarty->getCompileDir()).'/';
         $_compile_id = isset($compile_id) ? preg_replace('![^\w\|]+!', '_', $compile_id) : null;
         $_dir_sep = $smarty->use_sub_dirs ? DS : '^';
         if (isset($resource_name)) {
@@ -204,13 +204,13 @@ class Smarty_Internal_Utility
             unset($smarty->template_objects[$_templateId]);
 
             if ($tpl->source->exists) {
-                 $_resource_part_4 = basename(str_replace('^', '/', $tpl->compiled->filepath));
-                 $_resource_part_4_length = strlen($_resource_part_4);
+                 $_resource_part_1 = basename(str_replace('^', '/', $tpl->compiled->filepath));
+                 $_resource_part_1_length = strlen($_resource_part_1);
             } else {
                 return 0;
             }
 
-            $_resource_part_2 = str_replace('.php','.cache.php',$_resource_part_4);
+            $_resource_part_2 = str_replace('.php','.cache.php',$_resource_part_1);
             $_resource_part_2_length = strlen($_resource_part_2);
         }
         $_dir = $_compile_dir;
@@ -244,8 +244,8 @@ class Smarty_Internal_Utility
                 $unlink = false;
                 if ((!isset($_compile_id) || (isset($_filepath[$_compile_id_part_length]) && !strncmp($_filepath, $_compile_id_part, $_compile_id_part_length)))
                     && (!isset($resource_name)
-                        || (isset($_filepath[$_resource_part_4_length])
-                            && substr_compare($_filepath, $_resource_part_4, -$_resource_part_4_length, $_resource_part_4_length) == 0)
+                        || (isset($_filepath[$_resource_part_1_length])
+                            && substr_compare($_filepath, $_resource_part_1, -$_resource_part_1_length, $_resource_part_1_length) == 0)
                         || (isset($_filepath[$_resource_part_2_length])
                             && substr_compare($_filepath, $_resource_part_2, -$_resource_part_2_length, $_resource_part_2_length) == 0))) {
                     if (isset($exp_time)) {

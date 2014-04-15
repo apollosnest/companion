@@ -10,5 +10,5 @@ $t = $scheduler->tournament_from_id(1);
 
 
 //$smarty->assign('content', join_templates($latest_tournaments, $latest_fixtures, $latest_results));
-$smarty->display('template/userlanding.html');
+$smarty->display('template/teams.html');
 ?>

@@ -42,7 +42,7 @@
 					<li><a href="tournaments.html">Tournaments</a></li>
 				</ul>
 				
-					<p class="navbar-text navbar-right">Signed in as <a href="profile.html" class="navbar-link white-t">Kyle Selman</a></p>
+					<p class="navbar-text navbar-right">Signed in as <a href="profile.html" class="navbar-link white-t">{$user->Username|ucfirst}</a></p>
 
 				
 			</div><!-- /.navbar-collapse -->
@@ -51,7 +51,7 @@
 	
 	
 		<div class="jumbotron text-center no-b-pad white-b blue-t">
-			<h1>Kyle Selman</h1>
+			<h1>{$user->Username|ucfirst}</h1>
 			<h3>Biography...</h3>
 			<h3>Location...</h3>
 			<hr class="blue">

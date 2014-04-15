@@ -30,7 +30,7 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="dashboard.html"><strong>Comp</strong>anion</a>
+				<a class="navbar-brand" href="userlanding.html"><strong>Comp</strong>anion</a>
 			</div>
 
 			<!-- Collect the nav links, forms, and other content for toggling -->
@@ -42,7 +42,7 @@
 					<li class="active"><a href="tournaments.html">Tournaments</a></li>
 				</ul>
 				
-					<p class="navbar-text navbar-right">Signed in as <a href="profile.html" class="navbar-link">Kyle Selman</a></p>
+					<p class="navbar-text navbar-right">Signed in as <a href="profile.html" class="navbar-link">{$user->Username|ucfirst}</a></p>
 				
 			</div><!-- /.navbar-collapse -->
 		</div><!-- /.container-fluid -->
@@ -72,7 +72,7 @@
 						<td>Football</td>
 						<td>League</td>
 						<td>4</td>
-						<td>Kyle Selman</td>
+						<td>{$user->Username|ucfirst}</td>
 						<td><a href="#" class="btn btn-block btn-xs btn-inv" role="button"><span class="glyphicon glyphicon-minus"></span></a></td>
 					</tr>
 				</tbody>

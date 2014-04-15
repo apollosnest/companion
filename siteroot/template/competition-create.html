@@ -8,8 +8,8 @@
 
     <!-- Bootstrap -->
 	<link href='http://fonts.googleapis.com/css?family=Raleway:300' rel='stylesheet' type='text/css'>
-    <link href="css/bootstrap.css" rel="stylesheet">
-	<link href="../style/extras.css" rel="stylesheet">
+    <link href="/style/bootstrap.css" rel="stylesheet">
+	<link href="/style/extras.css" rel="stylesheet">
 	
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -42,7 +42,7 @@
 					<li><a href="tournements.html">Tournements</a></li>
 				</ul>
 				
-					<p class="navbar-text navbar-right">Signed in as <a href="#" class="navbar-link">Kyle Selman</a></p>
+					<p class="navbar-text navbar-right">Signed in as <a href="#" class="navbar-link">{$user->Username|ucfirst}</a></p>
 
 				
 			</div><!-- /.navbar-collapse -->
@@ -122,7 +122,7 @@
 									<tbody>
 										<tr>
 											<td>Eastwood Tropics</td>
-											<td>Kyle Selman</td>
+											<td>{$user->Username|ucfirst}</td>
 											<td class="text-center"><button class="btn btn-xs btn-inv">Remove</button></td>
 										</tr>
 									</tbody>

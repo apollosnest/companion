@@ -42,7 +42,7 @@
 					<li><a href="tournament.php">Tournaments</a></li>
 				</ul>
 			
-					<p class="navbar-text navbar-right">Signed in as <a href="profile.php" class="navbar-link white-t">{$name}</a></p>
+					<p class="navbar-text navbar-right">Signed in as <a href="profile.php" class="navbar-link white-t">{$name}</a> (<a href="logout.php" class="navbar-link white-t">Sign out?</a>)</p>
 			
 			</div><!-- /.navbar-collapse -->
 		</div><!-- /.container-fluid -->
@@ -66,8 +66,8 @@
 				</thead>
 				<tbody>
 					<tr>
-						<td><a class="white-t" href="profile.php">{$user->Username|ucfirst}</a></td>
-						<td>ks563</td>
+						<td><a class="white-t" href="profile.php">{$name}</a></td>
+						<td>{$username}</td>
 						<td>Bath, Eastwood</td>
 						<td>Admin</td>
 						<td><a href="#" class="btn btn-block btn-xs btn-inv" role="button"><span class="glyphicon glyphicon-minus"></span></a></td>

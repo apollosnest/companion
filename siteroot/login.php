@@ -29,6 +29,7 @@ if (isset($_GET["ticket"])) {
 			// certain BUCS accounts shouldn't be allowed entry
 			if ($userData["accountstate"] == "Full") {
 				session_start();
+				$_SESSION['user']['username'] = $response[1];
 				$_SESSION['user']['displayname'] = $userData['displayname'];
 				$_SESSION['user']['uidnumber'] = $userData['uidnumber'];
 				$_SESSION['user']['mail'] = $userData['mail'];

@@ -8,8 +8,8 @@
 
     <!-- Bootstrap -->
 	<link href='http://fonts.googleapis.com/css?family=Raleway:300' rel='stylesheet' type='text/css'>
-    <link href="/style/bootstrap.css" rel="stylesheet">
-	<link href="/style/extras.css" rel="stylesheet">
+    <link href="style/bootstrap.css" rel="stylesheet">
+	<link href="style/extras.css" rel="stylesheet">
 	
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -30,19 +30,19 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="#"><strong>Comp</strong>anion</a>
+				<a class="navbar-brand" href="index.php"><strong>Comp</strong>anion</a>
 			</div>
 
 			<!-- Collect the nav links, forms, and other content for toggling -->
 			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 				<ul class="nav navbar-nav">
 					<a href="#home"></a>
-					<li><a href="users.html">Users</a></li>
-					<li><a href="teams.html">Teams</a></li>
-					<li><a href="tournements.html">Tournements</a></li>
+					<li><a href="user.php">Users</a></li>
+					<li><a href="team.php">Teams</a></li>
+					<li><a href="tournament.php">Tournaments</a></li>
 				</ul>
 				
-					<p class="navbar-text navbar-right">Signed in as <a href="#" class="navbar-link">{$user->Username|ucfirst}</a></p>
+					<p class="navbar-text navbar-right">Signed in as <a href="profile.php" class="navbar-link white-t">{$name}</a> (<a href="logout.php" class="navbar-link white-t">Sign out?</a>)</p>
 
 				
 			</div><!-- /.navbar-collapse -->
@@ -80,7 +80,7 @@
 						</thead>
 						<tbody>
 							<tr>
-								<td><a href="team-view.html" class="white-t">Eastwood Tropics</a></td>
+								<td><a href="team-view.php" class="white-t">Eastwood Tropics</a></td>
 								<td>2</td>
 								<td>2</td>
 								<td>0</td>
@@ -183,9 +183,9 @@
 					</a>
 				</div>	
 			</div>
-			<div class="col-md-12">
+			<!-- <div class="col-md-12">
 			<a href="competition-fixtures.html" class="btn btn-default btn-block" role="button">Show All</a>
-			</div>
+			</div> -->
 		</div>
 		
 		<br>

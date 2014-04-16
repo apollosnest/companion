@@ -1,10 +1,15 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Untitled Document</title>
-</head>
+<?php
+session_start();
+require_once('core.php');
+$acc = new Account;
+$user = $acc->user_from_id(1);
+$smarty->assign('user', $user);
+$smarty->assign('name', $_SESSION['user']['displayname']);
 
-<body>
-</body>
-</html>
+$scheduler = new Scheduler;
+$t = $scheduler->tournament_from_id(1);
+
+
+//$smarty->assign('content', join_templates($latest_tournaments, $latest_fixtures, $latest_results));
+$smarty->display('template/profile.html');
+?>

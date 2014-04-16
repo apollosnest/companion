@@ -25,4 +25,6 @@ $smarty->debugging = true;
 $smarty->caching = false;
 $smarty->cache_lifetime = 120;
 
+error_reporting(0);
+
 ?>  

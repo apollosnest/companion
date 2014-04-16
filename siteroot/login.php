@@ -1,37 +1,53 @@
 <?php
+/*******************************************************************************
+** Login system                                                               **
+********************************************************************************
+** The University of Bath Single Sign-On system uses the Jasig CAS protocol.  **
+** The University website has a brief non-technical overview:                 **
+**     http://www.bath.ac.uk/web/tools/sso/                                   **
+** A full protocol specification is laid out here:                            **
+**     http://www.jasig.org/cas/protocol                                      **
+*******************************************************************************/
 
-if ($_POST) {
-	if (preg_match('/^[^@"\s]+@[^@"\s]+\.[^@"\s]{2,}$/', trim($_POST["email"]))) {
-		echo "good";
+require_once("config.php");
+
+$casEndpoint = "https://auth.bath.ac.uk"; // root URL of CAS endpoint
+$loginURL = SITE_ROOT . "login.php"; // likely the current URL
+
+// check to see if a login ticket has been received
+if (isset($_GET["ticket"])) {
+	// validate ticket
+	$response = file_get_contents($casEndpoint . "/validate?service=" .
+						   urlencode($loginURL) . "&ticket=" . $_GET["ticket"]);
+	// parse response
+	$response = explode("\n", $response);
+	// login will almost always be successful
+	if ($response[0] == "yes") {
+		require_once("lib/ldap.php");
+		$userData = lookupUser($response[1]);
+		if ($userData["found"]) {
+			// certain BUCS accounts shouldn't be allowed entry
+			if ($userData["accountstate"] == "Full") {
+				session_start();
+				$_SESSION['user']['displayname'] = $userData['displayname'];
+				$_SESSION['user']['uidnumber'] = $userData['uidnumber'];
+				$_SESSION['user']['mail'] = $userData['mail'];
+				$_SESSION['user']['loggedin'] = true;
+				header("Location: " . SITE_ROOT);
+			}
+			else {
+				echo "Error: Not full account.";
+			}
+		}
+		else {
+			echo "Error: Account not found.";
+		}
 	}
 	else {
-		echo "bad";
+		echo "Error: Could not log in.";
 	}
 }
 else {
-echo <<<EOT
-<h1>Log in / sign up page</h1>
-<div style="float: left; width: 50%;">
-	<h2>Log in</h2>
-	<form method="post">
-		<input name="email" type="email" placeholder="Email address"><br>
-		<input name="password" type="password" placeholder="Password"><br>
-		<input type="submit" value="Log in">
-	</form>
-	<a href="#">Forgot password</a>
-	
-	<div><a href="#">Log in with Bath Single Sign-On</a></div>
-</div>
-
-<div style="float: left; width: 50%;">
-	<h2>Sign up</h2>
-	<input type="text" placeholder="Name"><br>
-	<input type="email" placeholder="Email address"><br>
-	<input type="password" placeholder="Password"><br>
-	<input type="password" placeholder="Password (retype)"><br>
-	<input type="submit" value="Sign up">
-</div>
-EOT;
+	header("Location: " . $casEndpoint . "/login?service=" . urlencode(SITE_ROOT . "login.php"));
 }
-
 ?>

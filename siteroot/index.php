@@ -1,4 +1,12 @@
 <?php
+
+session_start();
+
+if (isset($_SESSION['user'])) {
+	header("Location: userlanding.php");
+	die();
+}
+
 require_once("core.php");
 // account testing
 $acc = new Account;

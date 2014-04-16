@@ -8,8 +8,8 @@
 
     <!-- Bootstrap -->
 	<link href='http://fonts.googleapis.com/css?family=Raleway:300' rel='stylesheet' type='text/css'>
-    <link href="/style/bootstrap.css" rel="stylesheet">
-	<link href="/style/extras.css" rel="stylesheet">
+    <link href="style/bootstrap.css" rel="stylesheet">
+	<link href="style/extras.css" rel="stylesheet">
 	
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -30,19 +30,19 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="userlanding.html"><strong>Comp</strong>anion</a>
+				<a class="navbar-brand" href="userlanding.php"><strong>Comp</strong>anion</a>
 			</div>
 
 			<!-- Collect the nav links, forms, and other content for toggling -->
 			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 				<ul class="nav navbar-nav">
 					<a href="#home"></a>
-					<li class="active"><a href="users.html">Users</a></li>
-					<li><a href="teams.html">Teams</a></li>
-					<li><a href="tournaments.html">Tournaments</a></li>
+					<li class="active"><a href="user.php">Users</a></li>
+					<li><a href="team.php">Teams</a></li>
+					<li><a href="tournament.php">Tournaments</a></li>
 				</ul>
 			
-					<p class="navbar-text navbar-right">Signed in as <a href="profile.html" class="navbar-link white-t">{$user->Username|ucfirst}</a></p>
+					<p class="navbar-text navbar-right">Signed in as <a href="profile.php" class="navbar-link white-t">{$name}</a></p>
 			
 			</div><!-- /.navbar-collapse -->
 		</div><!-- /.container-fluid -->
@@ -66,7 +66,7 @@
 				</thead>
 				<tbody>
 					<tr>
-						<td><a class="white-t" href="profile.html">{$user->Username|ucfirst}</a></td>
+						<td><a class="white-t" href="profile.php">{$user->Username|ucfirst}</a></td>
 						<td>ks563</td>
 						<td>Bath, Eastwood</td>
 						<td>Admin</td>

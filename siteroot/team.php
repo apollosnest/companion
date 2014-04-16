@@ -1,9 +1,10 @@
 <?php
+session_start();
 require_once('core.php');
 $acc = new Account;
 $user = $acc->user_from_id(1);
 $smarty->assign('user', $user);
-
+$smarty->assign('name', $_SESSION['user']['displayname']);
 
 $scheduler = new Scheduler;
 $t = $scheduler->tournament_from_id(1);
